@@ -19,10 +19,11 @@ Use this template to kickstart your Next.js projects with all the best practices
 - **TypeScript** for type safety
 - **ESLint** and **Prettier** for code quality and formatting
 - **Husky** pre-commit hooks for:
-   - Linting
-   - Type-checking
-   - Building
-   - Testing
+
+  - Linting
+  - Type-checking
+  - Building
+  - Testing
 
 - **Jest** and **React Testing Library** for unit and integration testing
 
@@ -81,7 +82,7 @@ If any of these checks fail, the commit will be aborted.
 
 ## Testing
 
-This boilerplate includes __Jest__ and __React Testing Library__ for testing. Tests are located in the `__tests__` directory alongside their corresponding components.
+This boilerplate includes **Jest** and **React Testing Library** for testing. Tests are located in the `__tests__` directory alongside their corresponding components.
 
 ### Running Tests
 
