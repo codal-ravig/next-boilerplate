@@ -1,4 +1,3 @@
-
 # Next.js Boilerplate with Tailwind CSS, TypeScript, ESLint, Prettier, Husky, and Jest
 
 This is a **Next.js boilerplate** project pre-configured with:
@@ -20,10 +19,11 @@ Use this template to kickstart your Next.js projects with all the best practices
 - **TypeScript** for type safety
 - **ESLint** and **Prettier** for code quality and formatting
 - **Husky** pre-commit hooks for:
-  - Linting
-  - Type-checking
-  - Building
-  - Testing
+   - Linting
+   - Type-checking
+   - Building
+   - Testing
+
 - **Jest** and **React Testing Library** for unit and integration testing
 
 ---
@@ -81,18 +81,21 @@ If any of these checks fail, the commit will be aborted.
 
 ## Testing
 
-This boilerplate includes **Jest** and **React Testing Library** for testing. Tests are located in the `__tests__` directory alongside their corresponding components.
+This boilerplate includes __Jest__ and __React Testing Library__ for testing. Tests are located in the `__tests__` directory alongside their corresponding components.
 
 ### Running Tests
 
 - Run all tests:
-  ```bash
-  npm run test
-  ```
+
+```bash
+npm run test
+```
+
 - Run tests in watch mode:
-  ```bash
-  npm run test:watch
-  ```
+
+```bash
+npm run test:watch
+```
 
 ### Example Test
 
@@ -116,17 +119,19 @@ describe('Example Component', () => {
 
 ```
 my-nextjs-boilerplate/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── about/
-│       └── page.tsx
-├── components/
-│   ├── Example.tsx
-│   └── __tests__/
-│       └── Example.test.tsx
-├── styles/
-│   └── globals.css
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── about/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── Example.tsx
+│   │   └── __tests__/
+│   │       └── Example.test.tsx
+│   ├── styles/
+│   │   └── globals.css
+│   └── lib/               # Optional: Utility functions or libraries
 ├── .eslintrc.json
 ├── .prettierrc
 ├── jest.config.js
