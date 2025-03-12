@@ -1,6 +1,6 @@
 // src/lib/api/apiClient.ts
 import axios, { AxiosInstance } from 'axios';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 
 // Create a reusable Axios instance
 const createApiClient = (baseURL: string): AxiosInstance => {
@@ -24,11 +24,11 @@ const createApiClient = (baseURL: string): AxiosInstance => {
       } else {
         // Server-side: Get token from cookies or other server-side storage
         // Example: Use Next.js `cookies` utility
-        const cookie = await cookies();
-        const token = cookie.get('token')?.value;
-        if (token) {
-          config.headers.Authorization = `Bearer ${token}`;
-        }
+        // const cookie = await cookies();
+        // const token = cookie.get('token')?.value;
+        // if (token) {
+        //   config.headers.Authorization = `Bearer ${token}`;
+        // }
       }
       return config;
     },
@@ -44,6 +44,7 @@ const createApiClient = (baseURL: string): AxiosInstance => {
       // Handle errors globally
       if (error.response?.status === 401) {
         // Handle unauthorized access (e.g., redirect to login)
+        console.log(error);
         console.error('Unauthorized access');
       }
       return Promise.reject(error);
