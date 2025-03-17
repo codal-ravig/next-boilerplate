@@ -11,9 +11,13 @@ export type Movie = {
   poster_path: string;
   release_date: string;
   vote_average: number;
-  original_language: string;
   popularity: number;
   vote_count: number;
+  original_language: string;
+  backdrop_path: string;
+  genres: { id: number; name: string }[];
+  runtime: number;
+  status: string;
 };
 
 export type TVShow = {
@@ -25,13 +29,16 @@ export type TVShow = {
   vote_average: number;
 };
 
-export const fetchPopularMovies = async (): Promise<Movie[]> => {
+export const fetchPopularMovies = async (
+  page: number = 1
+): Promise<{ results: Movie[]; page: number; total_pages: number }> => {
   const response = await apiClient.get(`${TMDB_BASE_URL}/movie/popular`, {
     params: {
       api_key: TMDB_API_KEY,
+      page,
     },
   });
-  return response.data.results;
+  return response.data;
 };
 
 export const fetchPopularTVShows = async (): Promise<TVShow[]> => {
@@ -61,4 +68,13 @@ export const searchTVShows = async (query: string): Promise<TVShow[]> => {
     },
   });
   return response.data.results;
+};
+
+export const fetchMovieDetails = async (id: string): Promise<Movie> => {
+  const response = await apiClient.get(`${TMDB_BASE_URL}/movie/${id}`, {
+    params: {
+      api_key: TMDB_API_KEY,
+    },
+  });
+  return response.data;
 };
